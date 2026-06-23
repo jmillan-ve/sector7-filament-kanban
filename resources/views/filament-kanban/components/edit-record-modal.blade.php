@@ -9,7 +9,7 @@
         </x-filament::modal.heading>
     </x-slot>
 
-    {{ $this->form }}
+    {{ $this->form() }}
 
     <x-slot name="footer">
         <x-filament::button type="submit" wire:click="editModalFormSubmitted">

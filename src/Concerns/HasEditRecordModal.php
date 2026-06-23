@@ -4,7 +4,6 @@ namespace Sector7\FilamentKanban\Concerns;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Livewire\Attributes\Form as FormAttribute;
 
 trait HasEditRecordModal
 {
@@ -54,7 +53,6 @@ trait HasEditRecordModal
         $this->dispatch('close-modal', id: 'kanban--edit-record-modal');
     }
 
-    #[FormAttribute]
     public function form(Form $form): Form
     {
         return $form
