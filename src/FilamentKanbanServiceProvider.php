@@ -33,19 +33,16 @@ class FilamentKanbanServiceProvider extends PackageServiceProvider
 
     }
 
-    public function packageBooted(): void
+    public function packageRegistered(): void
     {
-        file_put_contents('/tmp/kanban-boot.log', "packageBooted called\n", FILE_APPEND);
-
-        // Views Registration
-        $viewsPath = __DIR__ . '/../resources/views';
+        $viewsPath = __DIR__ . '/../resources/views/filament-kanban';
         if (file_exists($viewsPath)) {
             $this->loadViewsFrom($viewsPath, 'filament-kanban');
-            file_put_contents('/tmp/kanban-boot.log', "loadViewsFrom called: $viewsPath\n", FILE_APPEND);
-        } else {
-            file_put_contents('/tmp/kanban-boot.log', "views path not found: $viewsPath\n", FILE_APPEND);
         }
+    }
 
+    public function packageBooted(): void
+    {
         // Asset Registration
         FilamentAsset::register(
             $this->getAssets(),
