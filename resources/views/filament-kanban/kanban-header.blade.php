@@ -1,15 +1,15 @@
 @php
     $colorMap = [
-        'primary' => ['bg' => 'bg-blue-500', 'text' => 'text-blue-700', 'dot' => 'text-blue-400'],
-        'warning' => ['bg' => 'bg-amber-500', 'text' => 'text-amber-700', 'dot' => 'text-amber-400'],
-        'purple' => ['bg' => 'bg-purple-500', 'text' => 'text-purple-700', 'dot' => 'text-purple-400'],
-        'success' => ['bg' => 'bg-emerald-500', 'text' => 'text-emerald-700', 'dot' => 'text-emerald-400'],
-        'danger' => ['bg' => 'bg-red-500', 'text' => 'text-red-700', 'dot' => 'text-red-400'],
+        'primary' => ['border' => '#3b82f6', 'bg' => '#eff6ff', 'dot' => '#60a5fa'],
+        'warning' => ['border' => '#f59e0b', 'bg' => '#fffbeb', 'dot' => '#fbbf24'],
+        'purple'  => ['border' => '#a855f7', 'bg' => '#faf5ff', 'dot' => '#c084fc'],
+        'success' => ['border' => '#10b981', 'bg' => '#ecfdf5', 'dot' => '#34d399'],
+        'danger'  => ['border' => '#ef4444', 'bg' => '#fef2f2', 'dot' => '#f87171'],
     ];
     $colors = $colorMap[$status['color'] ?? 'primary'] ?? $colorMap['primary'];
 @endphp
 
 <h3 class="mb-2 px-4 font-semibold text-lg flex items-center gap-2">
-    <span class="w-3 h-3 rounded-full {{ $colors['dot'] }}" style="background-color: currentColor"></span>
-    <span class="{{ $colors['text'] }}">{{ $status['title'] }}</span>
+    <span class="w-3 h-3 rounded-full" style="background-color: {{ $colors['dot'] }}"></span>
+    <span style="color: {{ $colors['border'] }}">{{ $status['title'] }}</span>
 </h3>

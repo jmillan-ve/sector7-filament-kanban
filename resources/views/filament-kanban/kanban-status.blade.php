@@ -1,10 +1,10 @@
 @php
     $colorMap = [
-        'primary' => ['top' => 'border-t-blue-500', 'bg' => 'bg-blue-50'],
-        'warning' => ['top' => 'border-t-amber-500', 'bg' => 'bg-amber-50'],
-        'purple' => ['top' => 'border-t-purple-500', 'bg' => 'bg-purple-50'],
-        'success' => ['top' => 'border-t-emerald-500', 'bg' => 'bg-emerald-50'],
-        'danger' => ['top' => 'border-t-red-500', 'bg' => 'bg-red-50'],
+        'primary' => ['border' => '#3b82f6', 'bg' => '#eff6ff'],
+        'warning' => ['border' => '#f59e0b', 'bg' => '#fffbeb'],
+        'purple'  => ['border' => '#a855f7', 'bg' => '#faf5ff'],
+        'success' => ['border' => '#10b981', 'bg' => '#ecfdf5'],
+        'danger'  => ['border' => '#ef4444', 'bg' => '#fef2f2'],
     ];
     $colors = $colorMap[$status['color'] ?? 'primary'] ?? $colorMap['primary'];
 @endphp
@@ -14,7 +14,8 @@
 
     <div
         data-status-id="{{ $status['id'] }}"
-        class="flex flex-col flex-1 gap-2 p-3 rounded-xl border-t-4 {{ $colors['top'] }} {{ $colors['bg'] }} dark:bg-gray-800/80"
+        class="flex flex-col flex-1 gap-2 p-3 rounded-xl"
+        style="border-top: 4px solid {{ $colors['border'] }}; background-color: {{ $colors['bg'] }};"
     >
         @foreach($status['records'] as $record)
             @include($recordView)
