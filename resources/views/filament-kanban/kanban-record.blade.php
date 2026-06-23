@@ -14,5 +14,5 @@
         "
     @endif
 >
-    {{ $record->{static::$recordTitleAttribute} }}
+    {{ $record->{$this->recordTitleAttribute} }}
 </div>
