@@ -1,11 +1,14 @@
-<x-filament-support::modal
-    :id="'kanban--edit-record-modal'"
-    :heading="$this->getEditModalTitle()"
+<x-filament::modal
+    id="kanban--edit-record-modal"
+    :slide-over="$this->getEditModalSlideOver()"
     :width="$this->getEditModalWidth()"
-    :slideOver="$this->getEditModalSlideOver()"
-    closeEventName="close-modal"
-    openEventName="open-modal"
 >
+    <x-slot name="header">
+        <x-filament::modal.heading>
+            {{ $this->getEditModalTitle() }}
+        </x-filament::modal.heading>
+    </x-slot>
+
     {{ $this->form }}
 
     <x-slot name="footer">
@@ -13,8 +16,8 @@
             {{ $this->getEditModalSaveButtonLabel() }}
         </x-filament::button>
 
-        <x-filament::button color="gray" x-on:click="$dispatch('close-modal', { id: 'kanban--edit-record-modal' })">
+        <x-filament::button color="gray" x-on:click="isOpen = false">
             {{ $this->getEditModalCancelButtonLabel() }}
         </x-filament::button>
     </x-slot>
-</x-filament-support::modal>
+</x-filament::modal>
