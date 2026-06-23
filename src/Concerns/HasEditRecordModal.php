@@ -1,6 +1,6 @@
 <?php
 
-namespace Mokhosh\FilamentKanban\Concerns;
+namespace Sector7\FilamentKanban\Concerns;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -25,7 +25,7 @@ trait HasEditRecordModal
 
     public function mount(): void
     {
-        $this->form->fill();
+        //
     }
 
     public function recordClicked(int | string $recordId, array $data): void

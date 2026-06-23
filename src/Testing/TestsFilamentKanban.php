@@ -1,6 +1,6 @@
 <?php
 
-namespace Mokhosh\FilamentKanban\Testing;
+namespace Sector7\FilamentKanban\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 

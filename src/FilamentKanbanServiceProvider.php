@@ -1,21 +1,21 @@
 <?php
 
-namespace Mokhosh\FilamentKanban;
+namespace Sector7\FilamentKanban;
 
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
-use Mokhosh\FilamentKanban\Commands\MakeKanbanBoardCommand;
-use Mokhosh\FilamentKanban\Testing\TestsFilamentKanban;
+use Sector7\FilamentKanban\Commands\MakeKanbanBoardCommand;
+use Sector7\FilamentKanban\Testing\TestsFilamentKanban;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentKanbanServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'filament-kanban';
+    public static string $name = 'sector7-filament-kanban';
 
     public static string $viewNamespace = 'filament-kanban';
 
@@ -27,7 +27,7 @@ class FilamentKanbanServiceProvider extends PackageServiceProvider
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishAssets()
-                    ->askToStarRepoOnGitHub('mokhosh/filament-kanban');
+                    ->askToStarRepoOnGitHub('jmillan-ve/sector7-filament-kanban');
             });
 
         if (file_exists($package->basePath('/../resources/views'))) {
@@ -58,7 +58,7 @@ class FilamentKanbanServiceProvider extends PackageServiceProvider
 
     protected function getAssetPackageName(): ?string
     {
-        return 'mokhosh/filament-kanban';
+        return 'sector7/filament-kanban';
     }
 
     /**

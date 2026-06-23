@@ -1,12 +1,12 @@
 <?php
 
-namespace Mokhosh\FilamentKanban\Tests\Pages;
+namespace Sector7\FilamentKanban\Tests\Pages;
 
 use Filament\Forms;
-use Mokhosh\FilamentKanban\Pages\KanbanBoard;
-use Mokhosh\FilamentKanban\Tests\Enums\TaskStatus;
-use Mokhosh\FilamentKanban\Tests\Models\Task;
-use Mokhosh\FilamentKanban\Tests\Models\User;
+use Sector7\FilamentKanban\Pages\KanbanBoard;
+use Sector7\FilamentKanban\Tests\Enums\TaskStatus;
+use Sector7\FilamentKanban\Tests\Models\Task;
+use Sector7\FilamentKanban\Tests\Models\User;
 
 class TestBoard extends KanbanBoard
 {

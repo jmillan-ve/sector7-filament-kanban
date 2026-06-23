@@ -1,9 +1,9 @@
 <?php
 
-use Mokhosh\FilamentKanban\Tests\Enums\TaskStatus;
-use Mokhosh\FilamentKanban\Tests\Models\Task;
-use Mokhosh\FilamentKanban\Tests\Pages\TestBoard;
-use Mokhosh\FilamentKanban\Tests\Pages\TestBoardWithCustomViews;
+use Sector7\FilamentKanban\Tests\Enums\TaskStatus;
+use Sector7\FilamentKanban\Tests\Models\Task;
+use Sector7\FilamentKanban\Tests\Pages\TestBoard;
+use Sector7\FilamentKanban\Tests\Pages\TestBoardWithCustomViews;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Livewire\livewire;

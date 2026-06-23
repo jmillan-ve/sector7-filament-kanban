@@ -1,22 +1,19 @@
 <?php
 
-namespace Mokhosh\FilamentKanban\Pages;
+namespace Sector7\FilamentKanban\Pages;
 
 use Filament\Pages\Page;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
-use Mokhosh\FilamentKanban\Concerns\HasEditRecordModal;
-use Mokhosh\FilamentKanban\Concerns\HasStatusChange;
+use Sector7\FilamentKanban\Concerns\HasEditRecordModal;
+use Sector7\FilamentKanban\Concerns\HasStatusChange;
 use UnitEnum;
 
 class KanbanBoard extends Page
 {
     use HasEditRecordModal;
     use HasStatusChange;
-
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
-
-    protected static string $view = 'filament-kanban::kanban-board';
 
     protected static string $headerView = 'filament-kanban::kanban-header';
 
@@ -75,5 +72,15 @@ class KanbanBoard extends Page
     protected function getEloquentQuery(): Builder
     {
         return static::$model::query();
+    }
+
+    public function render(): View
+    {
+        return view('filament-kanban::kanban-board', $this->getViewData())
+            ->layout($this->getLayout(), [
+                'livewire' => $this,
+                'maxContentWidth' => $this->getMaxContentWidth(),
+                ...$this->getLayoutData(),
+            ]);
     }
 }
