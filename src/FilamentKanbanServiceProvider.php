@@ -30,7 +30,7 @@ class FilamentKanbanServiceProvider extends PackageServiceProvider
                     ->askToStarRepoOnGitHub('jmillan-ve/sector7-filament-kanban');
             });
 
-        if (file_exists($package->basePath('/../resources/views'))) {
+        if (file_exists($package->basePath('/resources/views'))) {
             $package->hasViews(static::$viewNamespace);
         }
     }
